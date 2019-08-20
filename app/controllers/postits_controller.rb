@@ -20,6 +20,25 @@ class PostitsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @postit = PostIt.find(params[:id])
+  end
+
+  def update
+    @postit = PostIt.find(params[:id])
+  
+    if @postit.update(postit_params)
+      redirect_to postits_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    PostIt.find(params[:id]).destroy
+    redirect_to postits_path
+  end
  
   private
   def postits_params

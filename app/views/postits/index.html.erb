@@ -3,4 +3,6 @@
 <% @postits.each do |postit| %>
   <h2><%= postit.title %></h2>
   <%= link_to 'Show PostIt', postit_path(postit) %>
+  <%= link_to 'Edit PostIt', edit_postit_path(postit) %>
+  <%= link_to 'Destroy PostIt', postit, method: :delete %>
 <% end %>
