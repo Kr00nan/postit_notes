@@ -1,0 +1,6 @@
+<h1> PostIts </h1>
+<p><%= link_to 'New PostIt', new_postit_path %></p>
+<% @postits.each do |postit| %>
+  <h2><%= postit.title %></h2>
+  <%= link_to 'Show PostIt', postit_path(postit) %>
+<% end %>
